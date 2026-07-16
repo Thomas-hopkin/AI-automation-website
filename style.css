@@ -453,13 +453,16 @@ form.contact-form{
   .flow-node{ flex: 1 1 40%; }
   .navlinks{
     position: fixed; inset: 62px 0 0 0;
+    height: calc(100vh - 62px);
     background: var(--bg);
     flex-direction: column;
     padding: 30px 28px;
     gap: 22px;
     transform: translateY(-110%);
     transition: transform .25s ease;
+    overflow-y: auto;
   }
+  .navlinks:not(.open){ pointer-events: none; }
   .navlinks.open{ transform: translateY(0); }
   .navlinks a{ font-size: 17px; }
   .mobile-toggle{
