@@ -4,18 +4,16 @@
    Type: Space Grotesk (display) / Inter (body) / IBM Plex Mono (labels)
 =================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
-
 :root{
   --bg: #F5F6F1;
   --bg-alt: #ECEFE7;
   --ink: #1B2420;
   --ink-soft: #4E5951;
-  --ink-faint: #7C8880;
+  --ink-faint: #656F68;
   --sage: #3E6259;
   --sage-deep: #2A453D;
   --gold: #D9A441;
-  --gold-deep: #B7842A;
+  --gold-deep: #996F23;
   --line: #D9DED3;
   --card: #FFFFFF;
 
