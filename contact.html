@@ -1,10 +1,22 @@
 <!doctype html>
 <html lang="en">
 <head>
+<script>document.documentElement.classList.add('js')</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact — TH Automations</title>
 <meta name="description" content="Book a free automation review with TH Automations to see what could be automated in your business.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TH Automations">
+<meta property="og:title" content="Contact — TH Automations">
+<meta property="og:description" content="Book a free automation review with TH Automations to see what could be automated in your business.">
+<meta property="og:image" content="og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contact — TH Automations">
+<meta name="twitter:description" content="Book a free automation review with TH Automations to see what could be automated in your business.">
+<meta name="twitter:image" content="og-image.png">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,6 +24,13 @@
 <header class="site">
   <div class="nav">
     <a href="index.html" class="brand">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <rect width="32" height="32" rx="9" fill="#2A453D"/>
+        <path d="M11 19.5L14 15.5M18 12.5L21 10" stroke="#D9A441" stroke-width="1.6" stroke-linecap="round"/>
+        <circle cx="9" cy="21" r="2.6" fill="#D9A441"/>
+        <circle cx="16" cy="14" r="2.6" fill="#D9A441"/>
+        <circle cx="23" cy="9" r="2.6" fill="#F5F6F1"/>
+      </svg>
       TH Automations
     </a>
     <nav class="navlinks" id="navlinks">
@@ -36,7 +55,7 @@
 
   <section>
     <div class="wrap contact-wrap">
-      <div>
+      <div class="reveal">
         <form class="contact-form">
           <div class="field">
             <label for="name">Full name</label>
@@ -54,7 +73,7 @@
             <label for="task">What's taking up too much of your team's time?</label>
             <textarea id="task" name="task" placeholder="e.g. I manually confirm every appointment by phone"></textarea>
           </div>
-          <button type="submit" class="btn btn-gold">Request my free automation review</button>
+          <button type="submit" class="btn btn-gold">Request my free automation review <svg class="arrow" viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h8M9 4l4 4-4 4"/></svg></button>
           <p class="form-note">I'll never share your information. This form is a demo — connect it to your email so submissions reach you directly.</p>
         </form>
         <div class="form-success">
@@ -68,7 +87,7 @@
         </div>
       </div>
 
-      <div class="info-card">
+      <div class="info-card reveal">
         <div class="info-row">
           <div>
             <div class="k">Response time</div>
