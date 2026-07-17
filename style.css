@@ -4,18 +4,16 @@
    Type: Space Grotesk (display) / Inter (body) / IBM Plex Mono (labels)
 =================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
-
 :root{
   --bg: #F5F6F1;
   --bg-alt: #ECEFE7;
   --ink: #1B2420;
   --ink-soft: #4E5951;
-  --ink-faint: #7C8880;
+  --ink-faint: #656F68;
   --sage: #3E6259;
   --sage-deep: #2A453D;
   --gold: #D9A441;
-  --gold-deep: #B7842A;
+  --gold-deep: #996F23;
   --line: #D9DED3;
   --card: #FFFFFF;
 
@@ -397,6 +395,63 @@ section{ padding: 64px 0; }
 }
 .tool-strip strong{ color: var(--ink-soft); font-weight: 600; }
 
+/* Testimonials */
+.testimonials-grid{
+  display:grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 22px;
+  align-items: stretch;
+}
+.testimonials-side{
+  display:flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.testimonial{
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 28px;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.testimonial:hover{
+  transform: translateY(-3px);
+  border-color: var(--sage);
+  box-shadow: 0 20px 36px -22px rgba(27,36,32,0.18);
+}
+.testimonial-featured{
+  padding: 40px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.stars{ display:flex; gap: 3px; color: var(--gold); }
+.stars svg{ width: 15px; height: 15px; }
+.testimonial blockquote{
+  margin: 14px 0 18px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+.testimonial-featured blockquote{
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(19px, 2.1vw, 23px);
+  line-height: 1.45;
+  color: var(--ink);
+  margin: 18px 0 22px;
+}
+.testimonial-attr{
+  display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap: 10px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: .02em;
+  color: var(--ink-faint);
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.testimonial-attr a{ color: var(--sage-deep); text-decoration: underline; text-underline-offset: 2px; }
+
 /* Before / after strip */
 .contrast{
   display:grid;
@@ -657,6 +712,7 @@ form.contact-form{
   .grid3{ grid-template-columns: 1fr; }
   .grid2{ grid-template-columns: 1fr; }
   .contrast{ grid-template-columns: 1fr; }
+  .testimonials-grid{ grid-template-columns: 1fr; }
   .contact-wrap{ grid-template-columns: 1fr; }
   .flow-row{ flex-wrap: wrap; }
   .flow-arrow{ display:none; }
