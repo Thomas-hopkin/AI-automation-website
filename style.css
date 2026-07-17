@@ -646,6 +646,20 @@ form.contact-form{
   box-shadow: 0 0 0 3px rgba(62,98,89,0.12);
 }
 .form-note{ font-size: 13px; color: var(--ink-faint); margin-top: 4px; }
+.form-error{
+  display:none;
+  font-size: 13.5px;
+  color: #A23B3B;
+  background: #FBEAEA;
+  border: 1px solid #E8C4C4;
+  border-radius: 9px;
+  padding: 12px 14px;
+  margin-top: 4px;
+}
+.form-error a{ color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.form-error.show{ display:block; }
+button[type="submit"]:disabled{ opacity: .7; cursor: default; }
+button[type="submit"]:disabled:hover{ transform: none; }
 
 .contact-wrap{
   display:grid;
