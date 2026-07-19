@@ -52,13 +52,22 @@ Static multi-page site, no framework/build step: `index.html`, `services.html`,
 - Mobile nav collapses into a full-screen panel; respects `prefers-reduced-motion`.
 
 ## Current known gaps / open TODOs
-1. **Contact form is wired to Formspree but not yet delivering.** `contact.html`'s
-   `<form>` has a `data-formspree-endpoint` attribute still set to the placeholder
-   `YOUR_FORM_ID`. Tom needs to sign up at formspree.io, create a form, and swap in
-   the real endpoint URL — until then the form shows a graceful inline error with a
-   mailto fallback rather than a fake success message.
-2. **No Calendly link yet.** Contact page has a placeholder note asking for one.
-   Once provided, embed it on `contact.html` (either inline widget or a button linking out).
+1. **Contact form is wired to FormSubmit.co** (`data-form-endpoint` on the `<form>`
+   in `contact.html`, pointed at `https://formsubmit.co/ajax/tomhopkin.systems@gmail.com`).
+   No account/signup needed for FormSubmit — but the *first* real submission triggers
+   a one-time "Activate Form" confirmation email to Tom, which he must click before
+   subsequent submissions actually arrive in his inbox. Until activated (or on any
+   send failure), the form shows a graceful inline error with a mailto fallback
+   rather than a fake success message. Hidden fields set `_subject`, `_template=table`
+   (formatted email body), `_captcha=false` (AJAX flow can't render a visible
+   captcha), and a `_honey` honeypot field for basic spam filtering.
+2. **Calendly is wired up as a popup** on `contact.html` ("Schedule a call" button
+   under "Prefer to book directly?"), using Tom's real link
+   (`calendly.com/thomas-hopkin-enr_/30min`) via `Calendly.initPopupWidget(...)`.
+   The popup's background/text/primary colors are tinted via URL query params to
+   roughly match the site's dark palette, though Calendly's own UI chrome inside
+   the widget stays its default light styling — that's a third-party widget limit,
+   not a bug.
 3. **Testimonials section on the homepage uses real Upwork reviews** (verbatim quotes,
    minor capitalization fixes only), attributed as "Verified Upwork review" since
    Upwork doesn't expose client names on a freelancer's public profile. A personal

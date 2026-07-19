@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var form = document.querySelector('.contact-form');
   if (form) {
-    var endpoint = form.dataset.formspreeEndpoint;
+    var endpoint = form.dataset.formEndpoint;
     var submitBtn = form.querySelector('button[type="submit"]');
     var btnLabel = submitBtn ? submitBtn.querySelector('.btn-label') : null;
     var success = document.querySelector('.form-success');
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
       e.preventDefault();
       if (errorNote) errorNote.classList.remove('show');
 
-      if (!endpoint || endpoint.indexOf('YOUR_FORM_ID') !== -1) {
+      if (!endpoint) {
         if (errorNote) errorNote.classList.add('show');
         return;
       }
