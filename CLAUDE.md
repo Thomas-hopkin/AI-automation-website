@@ -61,8 +61,13 @@ Static multi-page site, no framework/build step: `index.html`, `services.html`,
    rather than a fake success message. Hidden fields set `_subject`, `_template=table`
    (formatted email body), `_captcha=false` (AJAX flow can't render a visible
    captcha), and a `_honey` honeypot field for basic spam filtering.
-2. **No Calendly link yet.** Contact page has a placeholder note asking for one.
-   Once provided, embed it on `contact.html` (either inline widget or a button linking out).
+2. **Calendly is wired up as a popup** on `contact.html` ("Schedule a call" button
+   under "Prefer to book directly?"), using Tom's real link
+   (`calendly.com/thomas-hopkin-enr_/30min`) via `Calendly.initPopupWidget(...)`.
+   The popup's background/text/primary colors are tinted via URL query params to
+   roughly match the site's dark palette, though Calendly's own UI chrome inside
+   the widget stays its default light styling — that's a third-party widget limit,
+   not a bug.
 3. **Testimonials section on the homepage uses real Upwork reviews** (verbatim quotes,
    minor capitalization fixes only), attributed as "Verified Upwork review" since
    Upwork doesn't expose client names on a freelancer's public profile. A personal
