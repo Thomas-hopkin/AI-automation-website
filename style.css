@@ -785,6 +785,10 @@ button[type="submit"]:disabled:hover{ transform: none; }
   .flow-row{ flex-wrap: wrap; }
   .flow-arrow{ display:none; }
   .flow-node{ flex: 1 1 40%; }
+  .flow-badge{
+    position: static;
+    margin-bottom: 16px;
+  }
   .navlinks{
     position: fixed; inset: 62px 0 0 0;
     height: calc(100vh - 62px);
