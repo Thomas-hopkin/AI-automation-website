@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
           var dx = a.x - b.x, dy = a.y - b.y;
           var dist = Math.sqrt(dx * dx + dy * dy);
           if (dist < 130) {
-            ctx.strokeStyle = 'rgba(62,98,89,' + (0.14 * (1 - dist / 130)) + ')';
+            ctx.strokeStyle = 'rgba(111,160,142,' + (0.28 * (1 - dist / 130)) + ')';
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var p = particles[k];
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(217,164,65,0.4)';
+        ctx.fillStyle = 'rgba(228,179,85,0.55)';
         ctx.fill();
       }
     }
