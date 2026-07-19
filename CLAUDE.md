@@ -52,11 +52,15 @@ Static multi-page site, no framework/build step: `index.html`, `services.html`,
 - Mobile nav collapses into a full-screen panel; respects `prefers-reduced-motion`.
 
 ## Current known gaps / open TODOs
-1. **Contact form is wired to Formspree but not yet delivering.** `contact.html`'s
-   `<form>` has a `data-formspree-endpoint` attribute still set to the placeholder
-   `YOUR_FORM_ID`. Tom needs to sign up at formspree.io, create a form, and swap in
-   the real endpoint URL — until then the form shows a graceful inline error with a
-   mailto fallback rather than a fake success message.
+1. **Contact form is wired to FormSubmit.co** (`data-form-endpoint` on the `<form>`
+   in `contact.html`, pointed at `https://formsubmit.co/ajax/tomhopkin.systems@gmail.com`).
+   No account/signup needed for FormSubmit — but the *first* real submission triggers
+   a one-time "Activate Form" confirmation email to Tom, which he must click before
+   subsequent submissions actually arrive in his inbox. Until activated (or on any
+   send failure), the form shows a graceful inline error with a mailto fallback
+   rather than a fake success message. Hidden fields set `_subject`, `_template=table`
+   (formatted email body), `_captcha=false` (AJAX flow can't render a visible
+   captcha), and a `_honey` honeypot field for basic spam filtering.
 2. **No Calendly link yet.** Contact page has a placeholder note asking for one.
    Once provided, embed it on `contact.html` (either inline widget or a button linking out).
 3. **Testimonials section on the homepage uses real Upwork reviews** (verbatim quotes,
